@@ -1,0 +1,35 @@
+<!--这是一 个继承自 bootstrap/base.html 的新模板，其中定义了导航栏。
+这个模板本身也可作为其他模 板的二级基模板，例如 templates/user.html、templates/404.html 和 templates/500.html。-->
+{% extends "bootstrap/base.html" %}
+
+{% block title %}Flasky{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+         <div class="navbar-header">
+             <button type="button" class="navbar-toggle"
+                     data-toggle="collapse" data-target=".navbar-collapse">
+                 <span class="sr-only">Toggle navigation</span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+             </button>
+             <a class="navbar-brand" href="/">Flasky</a>
+         </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% block page_content %}<!--这个模板中的 content 区块里只有一个 <div> 容器，其中包含一个新的空区块，名为 page_ content，区块中的内容由衍生模板定义。-->
+        {% endblock %}
+    </div>
+{% endblock %}
+
